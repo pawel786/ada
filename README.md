@@ -133,9 +133,9 @@
   .hero-meta .stat .num{font-family:var(--serif);font-size:25px;}
   .hero-meta .stat .label{font-size:12px;color:var(--ink-2);opacity:0.7;}
   .hero-art{position:relative;min-width:0;}
-  .hero-photo{position:relative;}
+  .hero-photo{position:relative;max-width:400px;margin-left:auto;}
   .hero-photo::before{
-    content:"";position:absolute;top:16px;left:16px;right:-16px;bottom:-16px; hero,jpg
+    content:"";position:absolute;top:16px;left:16px;right:-16px;bottom:-16px;
     border:1px solid var(--gold);z-index:0;
   }
   .hero-photo img{
@@ -147,8 +147,7 @@
   .hero-photo.no-img::after{content:"The Body";font-family:var(--serif);font-style:italic;font-size:clamp(34px,6vw,64px);color:var(--gold);position:relative;z-index:1;}
 
   .fade-up{opacity:0;transform:translateY(16px);animation:fadeUp .8s ease forwards;}
-  @keyframes fadeUp{to{opacity:1;transform:translateY(0);}} <img width="640" height="427" alt="hero (2)" src="https://github.com/user-attachments/assets/07065854-b202-469b-b0aa-953e37381f14" />
-
+  @keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
 
   /* ---------- Section headings ---------- */
   .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:26px;margin-bottom:40px;flex-wrap:wrap;}
@@ -296,6 +295,7 @@
     .burger{display:flex;}
     .hero .wrap{grid-template-columns:1fr;}
     .hero-art{order:-1;width:100%;margin:0 0 28px;padding-right:16px;}
+    .hero-photo{max-width:340px;margin:0 auto;}
     .hero-photo::before{top:12px;left:12px;right:-12px;bottom:-12px;}
   }
   @media(max-width:600px){
@@ -305,6 +305,15 @@
     .cta-band{padding:60px 0;}
   }
 </style>
+<script>
+  // Szuka zdjęcia pod kilkoma nazwami — wystarczy wgrać je obok index.html
+  var heroSrc=['hero.png','image.png','hero.jpeg','hero.webp','Hero.jpg','hero.JPG','image.jpg'];
+  function heroNext(img){
+    var n=heroSrc.shift();
+    if(n){img.src=n;}
+    else{img.onerror=null;img.style.display='none';img.parentNode.classList.add('no-img');}
+  }
+</script>
 </head>
 <body>
 
@@ -373,7 +382,7 @@
       </div>
       <div class="hero-art fade-up" style="animation-delay:.3s">
         <div class="hero-photo">
-          <img src="hero.jpg" alt="The Body Katowice — profil kobiety i logo salonu" width="640" height="427" onerror="this.style.display='none';this.parentNode.classList.add('no-img')">
+          <img src="hero.jpg" alt="The Body Katowice — profil kobiety i logo salonu" width="640" height="427" onerror="heroNext(this)">
         </div>
       </div>
     </div>
@@ -699,4 +708,3 @@
 
 </body>
 </html>
-<img width="640" height="427" alt="hero (2)" src="https://github.com/user-attachments/assets/179f0919-20a8-47f3-bc23-4a846bee13e7" />
