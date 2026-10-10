@@ -147,7 +147,8 @@
   .hero-photo.no-img::after{content:"The Body";font-family:var(--serif);font-style:italic;font-size:clamp(34px,6vw,64px);color:var(--gold);position:relative;z-index:1;}
 
   .fade-up{opacity:0;transform:translateY(16px);animation:fadeUp .8s ease forwards;}
-  @keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+  @keyframes fadeUp{to{opacity:1;transform:translateY(0);}} <img width="640" height="427" alt="hero (2)" src="https://github.com/user-attachments/assets/07065854-b202-469b-b0aa-953e37381f14" />
+
 
   /* ---------- Section headings ---------- */
   .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:26px;margin-bottom:40px;flex-wrap:wrap;}
