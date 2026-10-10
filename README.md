@@ -135,7 +135,7 @@
   .hero-art{position:relative;min-width:0;}
   .hero-photo{position:relative;}
   .hero-photo::before{
-    content:"";position:absolute;top:16px;left:16px;right:-16px;bottom:-16px;
+    content:"";position:absolute;top:16px;left:16px;right:-16px;bottom:-16px; hero,jpg
     border:1px solid var(--gold);z-index:0;
   }
   .hero-photo img{
